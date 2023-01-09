@@ -6,7 +6,7 @@
 /*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:05:13 by adiouane          #+#    #+#             */
-/*   Updated: 2023/01/09 22:21:33 by adiouane         ###   ########.fr       */
+/*   Updated: 2023/01/10 00:19:24 by adiouane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int main()
 
 	uintptr_t serialized = serialize(&data);
 	Data *deserialized = deserialize(serialized);
-
 
 	if (deserialized == &data)
 		std::cout << "Success: original and deserialized pointers match" << std::endl;

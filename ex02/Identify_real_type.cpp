@@ -6,7 +6,7 @@
 /*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:17:43 by adiouane          #+#    #+#             */
-/*   Updated: 2023/01/09 22:00:18 by adiouane         ###   ########.fr       */
+/*   Updated: 2023/01/10 00:39:29 by adiouane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Base *generate(void)
 }
 
 void indentify(Base *p)
-{
+{           
     if (dynamic_cast<A *>(p))
         std::cout << "A" << std::endl;
     else if (dynamic_cast<B *>(p))
