@@ -6,7 +6,7 @@
 /*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:17:43 by adiouane          #+#    #+#             */
-/*   Updated: 2023/01/09 02:43:55 by adiouane         ###   ########.fr       */
+/*   Updated: 2023/01/09 02:52:29 by adiouane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void indentify(Base &p)
 
 int main(void)
 {
-    srand(time(NULL)); // seed random number generator with current time to get different results each time program is run if we don't use it, we will get the same result each time we run the program
+    srand(time(NULL));
     Base *base = generate();
     indentify(base);
     indentify(*base);
