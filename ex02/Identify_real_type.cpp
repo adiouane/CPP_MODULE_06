@@ -6,7 +6,7 @@
 /*   By: adiouane <adiouane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:17:43 by adiouane          #+#    #+#             */
-/*   Updated: 2023/01/09 02:52:29 by adiouane         ###   ########.fr       */
+/*   Updated: 2023/01/09 20:05:22 by adiouane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Base *generate(void)
 {
-    int i = rand() % 3;
+    int i = time(NULL) % 3;
     if (i == 0)
         return (new A);
     else if (i == 1)
@@ -45,33 +45,30 @@ void indentify(Base &p)
     }
     catch (std::exception &e)
     {
-        std::cout << "Unknown type" << std::endl;
-    }
-    try
-    {
-        B &b = dynamic_cast<B &>(p);
-        (void)b;
-        std::cout << "B" << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Unknown type" << std::endl;
-    }
-    try
-    {
-        C &c = dynamic_cast<C &>(p);
-        (void)c;
-        std::cout << "C" << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Unknown type" << std::endl;
+        try
+        {
+            B &b = dynamic_cast<B &>(p);
+            (void)b;
+            std::cout << "B" << std::endl;
+        }
+        catch (std::exception &e)
+        {
+            try
+            {
+                C &c = dynamic_cast<C &>(p);
+                (void)c;
+                std::cout << "C" << std::endl;
+            }
+            catch (std::exception &e)
+            {
+                std::cout << "Unknown type" << std::endl;
+            }
+        }
     }
 }
 
 int main(void)
 {
-    srand(time(NULL));
     Base *base = generate();
     indentify(base);
     indentify(*base);
